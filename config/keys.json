@@ -2,13 +2,14 @@
   //To disable a key completely, set its value to null
   
   //basic navigation/application keys
-  "Ctrl-O": "session:open-file",
+  "Ctrl-Shift-O": "session:open-file",
   "Ctrl-W": "session:close-tab",
   "Ctrl-S": "session:save-file",
   "Ctrl-Shift-S": "session:save-file-as",
   "Ctrl-N": "session:new-file",
   "Ctrl-Tab": "session:change-tab",
   "Ctrl-Shift-Tab": { "command": "session:change-tab", "argument": -1 },
+  "Ctrl-T": { "command": "palette:open" },
   
   //Chromebook fixes
   "Ctrl-Up": { "ace": "addCursorAbove" },
@@ -31,7 +32,6 @@
   "Ctrl-L": { "ace": "expandtoline" },
   "Alt-Q": "sublime:wrap",
   "Ctrl-D": "sublime:select-or-more-after",
-  "Ctrl-P": { "command": "palette:open" },
   "Ctrl-Shift-P": { "command": "palette:open", "argument": "command" },
   "Ctrl-R": { "command": "palette:open", "argument": "reference" },
   "Ctrl-G": { "command": "palette:open", "argument": "line" },

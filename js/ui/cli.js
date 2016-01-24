@@ -42,6 +42,6 @@ define([
   command.on("app:hide-prompt", function() {
     cli.removeClass("show");
     editor.focus();
-  })
+  });
     
 });
