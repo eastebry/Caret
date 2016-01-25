@@ -174,9 +174,25 @@ define([
     inflate.load("templates/about.html").then(function() {
       dialog(
         inflate.getHTML("templates/about.html", {
-          version: chrome.runtime.getManifest().version
+          version: chrome.runtime.getManifest().version,
         }),
-        ["ok"]
+        ["ok"],
+        null,
+        "width: 250px;"
+      );
+    });
+  });
+
+  command.on("app:render", function() {
+    inflate.load("templates/renderer.html").then(function() {
+      dialog(
+        inflate.getHTML("templates/renderer.html", {
+          width: "800px",
+          height: "600px"
+        }),
+        ["Close"],
+        null,
+        "width: 75%;"
       );
     });
   });

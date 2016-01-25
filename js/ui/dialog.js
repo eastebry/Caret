@@ -10,7 +10,7 @@ define([
   Currently, your callback will be passed the value set for the button pressed. Form support is coming.
   */
 
-  return function(text, buttons, callback) {
+  return function(text, buttons, callback, style) {
     if (typeof buttons == "function" || typeof buttons == "undefined") {
       callback = buttons;
       buttons = ["ok"];
@@ -28,6 +28,7 @@ define([
     
     var modal = inflate.get("templates/dialog.html", {
       text: text,
+      style: style,
       buttons: buttons
     });
     

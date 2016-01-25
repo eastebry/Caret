@@ -62,7 +62,9 @@
       "divider",
       { "label": "menuToggleMacro", "command": "ace:togglemacro" },
       { "label": "menuReplayMacro", "command": "ace:command", "argument": "replaymacro" },
-      { "label": "menuWordCount", "command": "editor:word-count" }
+      { "label": "menuWordCount", "command": "editor:word-count" },
+      "divider",
+      { "label": "Open Webviewer", "command": "app:render", "retainFocus": true }
     ]
   },
   {
