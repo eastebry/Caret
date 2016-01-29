@@ -1,0 +1,4 @@
+TODO:
+
+Install pre-commit hooks and get rid of that evil whitespace
+Make the webviewer load a specific file (perhaps speficied by some sort of marker in the file tree?)
