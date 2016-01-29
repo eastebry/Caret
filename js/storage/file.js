@@ -58,6 +58,26 @@ define([
       });
     },
     
+    readAsArrayBuffer: function(c) {
+      var self = this;
+      
+      if (!self.entry) {
+        console.error(self);
+        c("File not opened");
+      }
+      var reader = new FileReader();
+      reader.onload = function() {
+        c(null, reader.result);
+      };
+      reader.onerror = function(err) {
+        console.error("File read error!");
+        c(err);
+      };
+      self.entry.file(function(f) {
+        reader.readAsArrayBuffer(f);
+      });
+    },
+    
     write: function(data, c) {
       var self = this;
       c = c || function() {};

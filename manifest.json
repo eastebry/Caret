@@ -23,6 +23,7 @@
     "storage",
     "notifications",
     "syncFileSystem",
+    "system.network",
     "webview",
     {
       "fileSystem": [
@@ -32,6 +33,11 @@
       ]
     }
   ],
+  "sockets": {
+    "tcpServer" : {
+      "listen": ["*"]
+    }
+  },
   "kiosk_enabled": false,
   "offline_enabled": true,
   "file_handlers": {

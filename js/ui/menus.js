@@ -2,11 +2,12 @@ define([
     "settings!menus,keys",
     "editor",
     "ui/dialog",
+    "webviewer/webviewer",
     "command",
     "util/template!templates/menuItem.html",
     "util/i18n",
     "util/dom2"
-  ], function(Settings, editor, dialog, command, inflate, i18n) {
+  ], function(Settings, editor, dialog, WebViewer, command, inflate, i18n) {
     
   //default "Windows", will be adjusted during menu creation because async
   var platform = "win";
@@ -184,16 +185,22 @@ define([
   });
 
   command.on("app:render", function() {
+    // start the Webserver
+    var w = new WebViewer(8080,"thisisatest");
     inflate.load("templates/renderer.html").then(function() {
       dialog(
         inflate.getHTML("templates/renderer.html", {
           width: "800px",
-          height: "600px"
+          height: "600px",
+          src: "http://localhost:8080/Caret/readme.rst"
         }),
-        ["Close"],
-        null,
-        "width: 75%;"
+        ["Close"], //buttons on the dialog
+        function(text){w.stop();}, //callback function
+        "width: 75%;" //styles to apply to the dialog
       );
+      // TODO - there seems to be some sort of race condition when I start this thing
+      // We might want to make it a callback
+      w.start();
     });
   });
   
